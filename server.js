@@ -1,6 +1,6 @@
 // Load Express.js
 var express=require("express");
-var staticSite = __dirname +'/public';
+var staticSite = __dirname +'/Public';
 var app=express();
 
 app.use(function(req, res, next) {

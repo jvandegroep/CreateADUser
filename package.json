@@ -1,0 +1,10 @@
+{
+  "name": "dockercreateaduser",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Node.js based CreateADUser web app on using docker",
+  "author": "Jacob van de Groep <jaapgroep@hotmail.com>",
+  "dependencies": {
+        "express": "3.2.4"
+  }
+}

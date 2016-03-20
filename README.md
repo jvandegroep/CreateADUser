@@ -11,8 +11,9 @@ Please note that the site makes use of a NodeJS backend web server running on Wi
 
 # Limitations
 - No SSL/TLS security
-- Client side name transformation
-- Limited input checking.
+- Client, no server side name transformation
+- Limited input checking
+- This code is only the front, not the API back end.
 
 # HOW TO Create and Run the docker locally
 - To create the docker image type: "docker build -t [username]/dockercreateaduser"

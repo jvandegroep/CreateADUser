@@ -13,3 +13,7 @@ Please note that the site makes use of a NodeJS backend web server running on Wi
 - No SSL/TLS security
 - Client side name transformation
 - Limited input checking.
+
+# HOW TO Create and Run the docker locally
+- To create the docker image type: "Docker Build -t [username]/dockercreateaduser"
+- To run the docker type: "Docker run -p 8080:8080" -d [username]/dockercreateaduser"

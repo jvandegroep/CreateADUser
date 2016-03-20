@@ -15,7 +15,7 @@ Please note that the site makes use of a NodeJS backend web server running on Wi
 - Limited input checking
 - This code is only the front, not the API back end.
 
-# HOW TO Create and Run the docker locally
-- To create the docker image type: "docker build -t [username]/dockercreateaduser"
-- To run the docker type: "docker run -p 8080:8080 -d [username]/dockercreateaduser"
+# HOW TO Pull and Run the docker from Docker Hub
+- To create the docker image type: "docker pull jaapgroep/createaduser"
+- To run the docker on port 80, type: "docker run -p 80:8080 -d jaapgroep/createaduser"
 - Login to docker type: "docker exec -it [id] /bin/bash"

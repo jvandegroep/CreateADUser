@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>Create AD Users in TestLab</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="./CSS/styles.css">
+
+</head>
+<body>
+  <div class="jumbotron text-center">
+    <h1>Rabobank TestLab</h1>
+    <h2>Create new AD users<span class="glyphicon glyphicon-user logoUser"></span></h2>
+    <br>
+    <form class="form-horizontal" role="form" id="form1" name="form1" >
+      <div class="form-group">
+        <label class="control-label col-sm-4" for="firstName">First name:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="firstName" placeholder="John">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-4" for="lastName">Last name:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="lastName" placeholder="Doe">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-4" for="initials" required>Initials:</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="initials" placeholder="J">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-4" for="ADGroup">RiCloud group:</label>
+        <div class="col-sm-4">
+          <select class="form-control" id="lijstje" name="ADGroup"></select> <br>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-4">
+          <div class="checkbox">
+            <label><input type="checkbox" id="CreateEUaccount" name="CreateEUaccount" value="euYes">Also create .eu account</label>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="col-sm-offset-4 col-sm-4">
+      <button type="button" onclick="createUser()" class="btn btn-default disabled" id="button1"><strong>Submit</strong></button>
+      <br>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="col-sm-offset-2 col-sm-8"  id="previewField">
+      <br>
+      <h3>Preview input:</h3>
+      <table class="table table1">
+        <tbody>
+          <tr>
+            <td>Display name:</td>
+            <td id="PrDisplayName"></td>
+          </tr>
+          <tr>
+            <td>Username:</td>
+            <td class="" id="PrUserName"></td>
+          </tr>
+          <tr>
+            <td>Email address:</td>
+            <td id="PrEmailAddress"></td>
+          </tr>
+          <tr>
+            <td>EU account:</td>
+            <td id="PrEUAccount"></td>
+          </tr>
+          <tr>
+            <td>EU display name:</td>
+            <td id="PrEUDisplayName"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="container-fluid requeststatus1">
+    <div class="col-sm-offset-2 col-sm-8" id="requestStatusCon">
+      <br>
+      <h3 id="statusHeader">Request status:</h3>
+      <span id="statusView"></span>
+      <br><br>
+      <span class="glyphicon glyphicon-refresh logoRefresh"></span>
+      <br><br><br>
+    </div>
+  </div>
+
+  <div class="container-fluid footer1">
+    <div class="col-sm-12">
+      <br>
+      <h6 id="footer" >Copyright © 2016 Rabobank, All rights reserved.<a href='http://wiki.testlab.local'><span class="glyphicon glyphicon-home logoHome"></span></a></h6>
+    </div>
+  </div>
+
+  <script src="./JS/script.js"></script>
+  <script src="./JS/form.js"></script>
+
+</body>
+</html>

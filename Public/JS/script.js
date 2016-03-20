@@ -244,10 +244,10 @@ function PreviewUserInput(){
 
           if (y.indexOf(' ') >= 1) {
               SurNameDots = y.replace(" ",".");
-              XEmailAddress = FirstNameDots + "." + SurNameDots + "@RabobankTest.com";
+              XEmailAddress = FirstNameDots + "." + SurNameDots + "@BankTest.com";
           	}
           else {
-              XEmailAddress = FirstNameDots + "." + y + "@RabobankTest.com";
+              XEmailAddress = FirstNameDots + "." + y + "@BankTest.com";
           }
 
           //Show results in elements

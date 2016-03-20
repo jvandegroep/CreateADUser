@@ -17,3 +17,4 @@ Please note that the site makes use of a NodeJS backend web server running on Wi
 # HOW TO Create and Run the docker locally
 - To create the docker image type: "docker build -t [username]/dockercreateaduser"
 - To run the docker type: "docker run -p 8080:8080 -d [username]/dockercreateaduser"
+- Login to docker type: "docker exec -it [id] /bin/bash"

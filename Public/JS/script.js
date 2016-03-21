@@ -18,12 +18,13 @@ function getData(url,fn){
 function refreshList(){
 	var url = BASEURL + "/queryad";
 	getData(url,function (data){
-		console.log("AD group membership data received",data);
+		var data2 = JSON.parse(data);
+		console.log("AD group membership data received from URL:", url ,data2);
 	        var l= document.getElementById("lijstje");
         	var i;
-        	for(i=0;i< data.length;i++){
+        	for(i=0;i< data2.length;i++){
         	    var option = document.createElement("option");
-        	    option.text=data[i];
+        	    option.text=data2[i];
         	    l.add(option);
 	       }
         });

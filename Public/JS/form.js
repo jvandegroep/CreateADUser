@@ -1,12 +1,5 @@
 /////////////////////////////////////////////////////////////////////////////////////
 //
-// Hide elements when page loads.
-//
-document.getElementById('previewField').style.display = 'none';
-document.getElementById('requestStatusCon').style.display = 'none';
-
-/////////////////////////////////////////////////////////////////////////////////////
-//
 // Execute funtions based on user key-events
 //
 $(document).ready(function(){

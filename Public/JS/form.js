@@ -18,24 +18,13 @@ $(document).ready(function(){
         }
     });
 
-    $(window).scroll(function() {
-      $(".slideanim").each(function(){
-        var pos = $(this).offset().top;
-
-        var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
-          $(this).addClass("slide");
-        }
-      });
-    });
-
     //Show previewfield when the 'initials' input field is pressed.
     $("#initials").change(function(){
-        $("#previewField").fadeIn("slow");
+        $("#previewField").show("slow");
     });
 
     //Show statusrequestCon when submit button is clicked.
     $("#button1").click(function(){
-        $("#requestStatusCon").fadeIn("slow");
+        $("#requestStatusCon").show("slow");
     });
 });

@@ -1,34 +1,25 @@
-var BASEURL = "http://labmgmt.testlab.local:8080/api";
-
-function getData(url,fn){
-   var xhttp = new XMLHttpRequest();
-   xhttp.onreadystatechange = function() {
-        if (xhttp.readyState == 4 && xhttp.status == 200) {
-        	fn(xhttp.responseText);
-        }
-  };
-  xhttp.open("GET", url, true);
-  xhttp.send();
-}
-
 /////////////////////////////////////////////////////////////////////////////////////
 //
 // Fetch data from /api/queryad API and create a list from data.
 //
 function refreshList(){
-	var url = BASEURL + "/queryad";
-	getData(url,function (data){
-		console.log("AD group membership data received",data);
-	        var l= document.getElementById("lijstje");
-        	var i;
-        	for(i=0;i< data.length;i++){
-        	    var option = document.createElement("option");
-        	    option.text=data[i];
-        	    l.add(option);
-	       }
-        });
-};
-
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            var data = JSON.parse(xhttp.responseText);
+	          console.log("AD group membership data received",data);
+	          var l= document.getElementById("lijstje");
+        	  var i;
+        	  for(i=0;i< data.length;i++){
+        		    var option = document.createElement("option");
+        		    option.text=data[i];
+        		    l.add(option);
+		        }
+        }
+  };
+  xhttp.open("GET", "http://labmgmt.testlab.local:8080/api/queryad", true);
+  xhttp.send();
+}
 refreshList();
 
 
@@ -78,7 +69,7 @@ function createUser(){
     createAdmin();
   }
 
-  var URL4= BASEURL + "/createaduser?TuserName="+TuserName+"&TdisplayName="+TdisplayName+"&TemailAddress="+TemailAddress+"&TfirstName="+TfirstName+"&TlastName="+TlastName+"&Tinitials="+Tinitials+"&TadGroup="+TadGroup;
+  var URL4= "http://labmgmt.testlab.local:8080/api/createaduser?TuserName="+TuserName+"&TdisplayName="+TdisplayName+"&TemailAddress="+TemailAddress+"&TfirstName="+TfirstName+"&TlastName="+TlastName+"&Tinitials="+Tinitials+"&TadGroup="+TadGroup;
   console.log("URL", URL4);
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -113,7 +104,7 @@ function createAdmin(){
 
   printStatus("Processing admin user request, please note this can take up to one minute..");
 
-  var URL5= BASEURL + "/createadminuser?TuserName="+TuserName+"&TeuDisplayName="+TeuDisplayName+"&TemailAddress="+TemailAddress+"&TfirstName="+TfirstName+"&TlastName="+TlastName+"&Tinitials="+Tinitials;
+  var URL5= "http://labmgmt.testlab.local:8080/api/createadminuser?TuserName="+TuserName+"&TeuDisplayName="+TeuDisplayName+"&TemailAddress="+TemailAddress+"&TfirstName="+TfirstName+"&TlastName="+TlastName+"&Tinitials="+Tinitials;
   console.log("URL", URL5);
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -134,7 +125,7 @@ function createAdmin(){
 //
 function checkUserName(){
   var YUserName = document.getElementById("PrUserName").innerText;
-  var URL2= BASEURL + "/queryAdUser?YuserName="+YUserName;
+  var URL2= "http://labmgmt.testlab.local:8080/api/queryAdUser?YuserName="+YUserName;
   console.log("URL", URL2);
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -167,7 +158,7 @@ function checkUserName(){
 //
 function checkEUAccount(){
   var VUserName = document.getElementById("PrEUAccount").innerText;
-  var URL3= BASEURL + "/queryAdminUser?VuserName="+VUserName;
+  var URL3= "http://labmgmt.testlab.local:8080/api/queryAdminUser?VuserName="+VUserName;
   console.log("URL", URL3);
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {

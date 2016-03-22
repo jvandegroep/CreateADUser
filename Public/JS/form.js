@@ -3,6 +3,10 @@
 // Execute funtions based on user key-events
 //
 $(document).ready(function(){
+    //hide elements
+    $("#previewField").hide();
+    $("#requestStatusCon").hide();
+
     //execute function on keyup in form so user sees while typing.
     $("input").change(function(){
         PreviewUserInput();

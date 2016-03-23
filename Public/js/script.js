@@ -6,7 +6,7 @@ function getData(url,fn){
         if (xhttp.readyState == 4 && xhttp.status == 200) {
         	fn(xhttp.responseText);
         }
-        else {
+        if (xhttp.readyState == 4 && xhttp.status == 404) {
           console.log("connection failed, showing modal.");
           $("#myModal").modal();
         }

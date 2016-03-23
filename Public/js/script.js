@@ -1,4 +1,4 @@
-var BASEURL = "http://labmgmt.testlab.local:8080/api";
+var BASEURL = "http://localhost:8080/api";
 
 function getData(url,fn){
    var xhttp = new XMLHttpRequest();

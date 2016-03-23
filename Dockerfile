@@ -1,4 +1,5 @@
-FROM node:argon
+# last version of Alpine-node OS
+FROM mhart/alpine-node:latest
 
 # Ceate app dir
 RUN mkdir -p /user/src/app

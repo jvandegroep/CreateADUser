@@ -1,4 +1,4 @@
-FROM node:argon
+FROM mhart/alpine-node:latest
 
 # Ceate app dir
 RUN mkdir -p /user/src/app

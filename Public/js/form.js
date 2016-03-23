@@ -1,15 +1,12 @@
 /////////////////////////////////////////////////////////////////////////////////////
 //
-// Hide elements when page loads.
-//
-document.getElementById('previewField').style.display = 'none';
-document.getElementById('requestStatusCon').style.display = 'none';
-
-/////////////////////////////////////////////////////////////////////////////////////
-//
 // Execute funtions based on user key-events
 //
 $(document).ready(function(){
+    //hide elements
+    $("#previewField").hide();
+    $("#requestStatusCon").hide();
+
     //execute function on keyup in form so user sees while typing.
     $("input").change(function(){
         PreviewUserInput();
@@ -25,24 +22,14 @@ $(document).ready(function(){
         }
     });
 
-    $(window).scroll(function() {
-      $(".slideanim").each(function(){
-        var pos = $(this).offset().top;
-
-        var winTop = $(window).scrollTop();
-        if (pos < winTop + 600) {
-          $(this).addClass("slide");
-        }
-      });
-    });
-
     //Show previewfield when the 'initials' input field is pressed.
     $("#initials").change(function(){
-        $("#previewField").fadeIn("slow");
+        $("#previewField").show("slow");
     });
 
     //Show statusrequestCon when submit button is clicked.
     $("#button1").click(function(){
-        $("#requestStatusCon").fadeIn("slow");
+        $("#requestStatusCon").show("slow");
     });
+
 });
